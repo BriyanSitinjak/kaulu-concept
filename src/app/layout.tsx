@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -27,7 +28,29 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="sticky top-0 z-50 backdrop-saturate-150 backdrop-blur-md bg-background/80 border-b border-foreground/10">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex items-center justify-between h-16">
+              <div className="font-bold tracking-wide">Kaulu</div>
+              <nav aria-label="Main menu">
+                <ul className="flex items-center gap-4">
+                  <li>
+                    <Link className="opacity-80 hover:opacity-100 transition-opacity" href="/">Dashboard</Link>
+                  </li>
+                  <li>
+                    <Link className="opacity-80 hover:opacity-100 transition-opacity" href="#">Reports</Link>
+                  </li>
+                  <li>
+                    <Link className="opacity-80 hover:opacity-100 transition-opacity" href="#">Settings</Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <main className="max-w-7xl mx-auto px-4">
+          {children}
+        </main>
       </body>
     </html>
   );
