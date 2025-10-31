@@ -20,7 +20,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-end p-4 bg-linear-to-t from-background/40 to-transparent">
           <div>
             <h1 className="text-2xl font-semibold">Welcome back</h1>
-            <p className="mt-1 opacity-80">Here is your simple dashboard overview.</p>
+            <p className="mt-1 opacity-80">Kaulu Concept</p>
           </div>
         </div>
       </section>
