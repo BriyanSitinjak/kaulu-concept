@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/providers";
 
@@ -28,11 +27,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="max-w-7xl mx-auto px-4">
-          <Providers>
-            {children}
-            </Providers>
-        </main>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
