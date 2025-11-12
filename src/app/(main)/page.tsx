@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <section
         className="relative overflow-hidden rounded-2xl mt-5 bg-[radial-gradient(1200px_400px_at_10%_-20%,hsl(var(--foreground)/0.1)_0%,transparent_60%),radial-gradient(1000px_300px_at_100%_0%,hsl(var(--foreground)/0.12)_0%,transparent_60%)]"
         aria-label="Dashboard banner"

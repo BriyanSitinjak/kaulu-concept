@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "@/theme";
+import { Providers } from "@/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +29,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <main className="max-w-7xl mx-auto px-4">
-          <ChakraProvider
-            value={theme}
-          >
+          <Providers>
             {children}
-          </ChakraProvider>
+            </Providers>
         </main>
       </body>
     </html>

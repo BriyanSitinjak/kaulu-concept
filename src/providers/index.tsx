@@ -6,7 +6,7 @@ import theme from "@/theme";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <ChakraProvider value={theme}>
+    <ChakraProvider theme={theme}>
       {children}
     </ChakraProvider>
   );

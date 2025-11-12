@@ -7,10 +7,10 @@ export default function NotFound() {
     <Box textAlign="center" py={10} px={4}>
         <Heading>Page not found</Heading>
         <Text>The page you are looking for does not exist.</Text>
-        <Button asChild>
+        <Button>
             <Link href="/">Go to home</Link>
         </Button>
-        <Button asChild>
+        <Button>
             <Link href="/contact">Contact us</Link>
         </Button>
     </Box>
