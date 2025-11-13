@@ -3,21 +3,16 @@
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { Box } from "@chakra-ui/react";
+import Banner from "@/components/hero/Banner";
+import DashboardContent from "@/components/hero/DashboardContent";
 
 export default function Dashboard() {
   return (
-    <Box bg="blue.500" minH="200vh" w="100%">
+    <Box>
       <Header />
-      <Box 
-        minH="80vh" 
-        w="100%" 
-        bg="blue.500" 
-        pt={{ base: "80px", md: "100px" }}
-      >
-        Dashboard Content
-      </Box>
-      {/* <Navbar />
-      <Footer /> */}
+      <Banner />
+      <DashboardContent />
+      <Footer />
     </Box>
   )
 };

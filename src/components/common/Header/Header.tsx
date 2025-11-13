@@ -39,9 +39,7 @@ export default function Header() {
         right={0}
         w="100%"
         zIndex={1000}
-        bg="rgba(0, 0, 0, 0.8)"
-        backdropFilter="blur(10px)"
-        borderBottom="1px solid"
+        backdropFilter="blur(8px)"
         borderColor="gray.700"
         transform={showHeader ? 'translateY(0)' : 'translateY(-100%)'}
         transition="transform 0.3s ease-in-out"
@@ -59,9 +57,9 @@ export default function Header() {
           <Text
             as={Link}
             href="/"
-            fontSize={{ base: 'xl', md: '2xl' }}
+            fontSize={{ base: 'xl', md: '`2xl' }}
             fontWeight="bold"
-            color="white"
+            color="blackAlpha.900"
             _hover={{ opacity: 0.8 }}
             transition="opacity 0.2s"
           >
@@ -79,7 +77,7 @@ export default function Header() {
                 as={Link}
                 href={item.href}
                 variant="ghost"
-                color="white"
+                color="blackAlpha.800"
                 fontSize="md"
                 _hover={{ bg: 'rgba(255, 255, 255, 0.1)' }}
               >
