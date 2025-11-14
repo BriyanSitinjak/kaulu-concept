@@ -4,13 +4,7 @@ import { Box, Flex, Text, Button, IconButton, useDisclosure } from "@chakra-ui/r
 import { useState, useEffect, useCallback } from "react";
 import { HiMenu } from "react-icons/hi";
 import Link from "next/link";
-
-const SCROLL_THRESHOLD = 50;
-const MENU_ITEMS = [
-  { label: 'Services', href: '/services' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Contact', href: '/contact' },
-] as const;
+import { MENU_ITEMS, SCROLL_THRESHOLD } from "@/constants";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,8 +16,8 @@ export default function Header() {
 
   useEffect(() => {
     handleScroll(); // Check initial position
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
   const showHeader = !isScrolled;
@@ -31,6 +25,7 @@ export default function Header() {
 
   return (
     <>
+      {/* Header Bar */}
       <Box
         as="header"
         position="fixed"
@@ -41,7 +36,7 @@ export default function Header() {
         zIndex={1000}
         backdropFilter="blur(8px)"
         borderColor="gray.700"
-        transform={showHeader ? 'translateY(0)' : 'translateY(-100%)'}
+        transform={showHeader ? "translateY(0)" : "translateY(-100%)"}
         transition="transform 0.3s ease-in-out"
         suppressHydrationWarning
       >
@@ -54,10 +49,11 @@ export default function Header() {
           maxW="7xl"
           mx="auto"
         >
+          {/* Logo */}
           <Text
             as={Link}
             href="/"
-            fontSize={{ base: 'xl', md: '`2xl' }}
+            fontSize={{ base: "xl", md: "2xl" }}
             fontWeight="bold"
             color="blackAlpha.900"
             _hover={{ opacity: 0.8 }}
@@ -66,10 +62,11 @@ export default function Header() {
             Kaulu Concept
           </Text>
 
+          {/* Desktop Nav */}
           <Flex
             gap={{ base: 2, md: 6 }}
             align="center"
-            display={showHeader ? { base: 'none', md: 'flex' } : 'none'}
+            display={showHeader ? { base: "none", md: "flex" } : "none"}
           >
             {MENU_ITEMS.map((item) => (
               <Button
@@ -79,7 +76,7 @@ export default function Header() {
                 variant="ghost"
                 color="blackAlpha.800"
                 fontSize="md"
-                _hover={{ bg: 'rgba(255, 255, 255, 0.1)' }}
+                _hover={{ bg: "rgba(255, 255, 255, 0.1)" }}
               >
                 {item.label}
               </Button>
@@ -88,6 +85,7 @@ export default function Header() {
         </Flex>
       </Box>
 
+      {/* Mobile Burger Menu Button */}
       {showBurgerMenu && (
         <IconButton
           aria-label="Open menu"
@@ -101,12 +99,13 @@ export default function Header() {
           color="white"
           borderRadius="full"
           backdropFilter="blur(10px)"
-          _hover={{ bg: 'rgba(0, 0, 0, 0.9)' }}
+          _hover={{ bg: "rgba(0, 0, 0, 0.9)" }}
           transition="opacity 0.3s ease-in-out"
           onClick={onOpen}
         />
       )}
 
+      {/* Sidebar Drawer Menu */}
       <Box
         position="fixed"
         top={0}
@@ -116,10 +115,11 @@ export default function Header() {
         bg="rgba(0, 0, 0, 0.95)"
         backdropFilter="blur(10px)"
         zIndex={1002}
-        transform={isOpen ? 'translateX(0)' : 'translateX(100%)'}
+        transform={isOpen ? "translateX(0)" : "translateX(100%)"}
         transition="transform 0.3s ease-in-out"
         pt={20}
         px={6}
+        pointerEvents={isOpen ? "auto" : "none"}
       >
         <Flex direction="column" gap={4}>
           {MENU_ITEMS.map((item) => (
@@ -131,7 +131,7 @@ export default function Header() {
               color="white"
               fontSize="lg"
               justifyContent="flex-start"
-              _hover={{ bg: 'rgba(255, 255, 255, 0.1)' }}
+              _hover={{ bg: "rgba(255, 255, 255, 0.1)" }}
               onClick={onClose}
             >
               {item.label}
@@ -140,6 +140,7 @@ export default function Header() {
         </Flex>
       </Box>
 
+      {/* Overlay */}
       {isOpen && (
         <Box
           position="fixed"

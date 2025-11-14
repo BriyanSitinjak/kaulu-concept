@@ -1,9 +1,5 @@
+import Portfolio from "@/screens/portfolio";
+
 export default function Page() {
-  return (
-    <main>
-      <h1>Portfolio</h1>
-    </main>
-  );
+  return <Portfolio />;
 }
-
-

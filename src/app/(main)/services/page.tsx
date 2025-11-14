@@ -1,9 +1,5 @@
+import Services from "@/screens/services";
+
 export default function Page() {
-  return (
-    <main>
-      <h1>Services</h1>
-    </main>
-  );
+  return <Services />;
 }
-
-
