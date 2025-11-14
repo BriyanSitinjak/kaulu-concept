@@ -1,9 +1,12 @@
 'use client';
 
-import { Box } from "@chakra-ui/react";
+import Wrapper from "@/components/common/Wrapper";
+import WhatWeDo from "@/components/hero/WhatWeDo";
 
 export default function Portfolio() {
     return (
-        <Box></Box>
+        <Wrapper>
+            <WhatWeDo />
+        </Wrapper>
     )
 }

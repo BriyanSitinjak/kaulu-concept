@@ -45,7 +45,7 @@ export default function Header() {
           align="center"
           justify="space-between"
           px={{ base: 4, md: 8 }}
-          py={4}
+          h="66px"
           maxW="7xl"
           mx="auto"
         >
@@ -112,7 +112,7 @@ export default function Header() {
         right={0}
         bottom={0}
         w="250px"
-        bg="rgba(0, 0, 0, 0.95)"
+        bg="gray.50"
         backdropFilter="blur(10px)"
         zIndex={1002}
         transform={isOpen ? "translateX(0)" : "translateX(100%)"}
@@ -128,7 +128,7 @@ export default function Header() {
               as={Link}
               href={item.href}
               variant="ghost"
-              color="white"
+              color="black"
               fontSize="lg"
               justifyContent="flex-start"
               _hover={{ bg: "rgba(255, 255, 255, 0.1)" }}

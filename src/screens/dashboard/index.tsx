@@ -1,25 +1,20 @@
-'use client';
+"use client";
 
-import { Box } from "@chakra-ui/react";
 import Banner from "@/components/hero/Banner";
 import DashboardContent from "@/components/hero/DashboardContent";
+import WhatWeDo from "@/components/hero/WhatWeDo";
+import WhyChooseUs from "@/components/hero/WhyChooseUs";
+import Wrapper from "@/components/common/Wrapper";
 
 export default function Dashboard() {
   return (
     <>
       <Banner />
-      <Box
-        border="1px solid orange"
-        maxW="80vw"
-        w="100%"
-        minH="60vh"
-        h="max-content"
-        justifySelf="center"
-        alignContent="center"
-        mb="60px"
-      >
+      <Wrapper>
         <DashboardContent />
-      </Box>
+        <WhatWeDo />
+        <WhyChooseUs />
+      </Wrapper>
     </>
   );
 }

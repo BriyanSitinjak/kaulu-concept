@@ -16,3 +16,12 @@ export type socialLinksTypes = {
     href: string;
     label: string;
 }
+
+export type expertiseType = slidesType & {
+    label: string;
+};
+
+export type titleDescType = {
+    title: string;
+    description: string;
+}
