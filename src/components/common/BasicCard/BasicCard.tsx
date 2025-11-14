@@ -1,7 +1,7 @@
-import { titleDescType } from "@/types";
+import { TitleDescType } from "@/types";
 import { Box, Stack, Text } from "@chakra-ui/react";
 
-export default function BasicCard({ title, description }: titleDescType) {
+export default function BasicCard({ title, description }: TitleDescType) {
   return (
     <Box
       p={5}

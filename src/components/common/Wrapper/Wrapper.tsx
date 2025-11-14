@@ -8,8 +8,8 @@ export default function Wrapper({ children }: { children: ReactNode }) {
       justifySelf="center"
       maxW="80vw"
       w="100%"
-      mb="60px"
-      pt="66px"
+      mb="80px"
+      pt="86px"
     >
       {children}
     </Box>
