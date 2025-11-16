@@ -10,7 +10,7 @@ export default function DashboardSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <Box h="48vh" alignContent="center">
+    <Box minH="48vh" h="100%" alignContent="center">
       <motion.div
         {...fadeInUp({ shouldReduceMotion, delay: 0.2 })}
         style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
@@ -34,7 +34,7 @@ export default function DashboardSection() {
             size="lg"
             fontWeight="semibold"
             textAlign="center"
-            mb={3}
+            mb={{ base: 0, md: 3 }}
           >
             Crafting Exceptional Architecture & Interior Experiences
           </Heading>

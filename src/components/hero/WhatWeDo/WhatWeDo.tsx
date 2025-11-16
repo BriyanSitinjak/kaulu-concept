@@ -8,7 +8,8 @@ export default function WhatWeDo() {
       py={{ base: 12, md: 20 }}
       px={{ base: 4, md: 10 }}
       bg="gray.50"
-      h="60vh"
+      minH="60vh"
+      h="100%"
       color="whiteAlpha.900"
       borderRadius={{ base: "2xl", md: "3xl" }}
     >

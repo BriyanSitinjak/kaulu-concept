@@ -6,7 +6,8 @@ import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 export default function WhyChooseUs() {
   return (
     <Box
-      h="60vh"
+      minH="60vh"
+      h="100%"
       as="section"
       py={{ base: 14, md: 20 }}
       px={{ base: 4, md: 10 }}

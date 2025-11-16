@@ -24,7 +24,7 @@ export default function Footer() {
         justify="space-between"
         maxW="80vw"
         mx="auto"
-        gap={6}
+        gap={{ base: 0, md: 6 }}
       >
         <Flex gap={4} align="center">
           {SOCIAL_LINKS.map(({ icon, href, label }) => (
