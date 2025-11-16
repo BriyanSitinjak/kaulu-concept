@@ -6,6 +6,7 @@ export default function Wrapper({ children }: { children: ReactNode }) {
   return (
     <Box
       justifySelf="center"
+      margin="auto"
       maxW="80vw"
       w="100%"
       mb="80px"
