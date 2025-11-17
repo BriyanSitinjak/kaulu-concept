@@ -5,6 +5,8 @@ import { useState, useEffect, useCallback } from "react";
 import { HiMenu } from "react-icons/hi";
 import Link from "next/link";
 import { MENU_ITEMS, SCROLL_THRESHOLD } from "@/constants";
+import Image from "next/image";
+import kauluLogo from "@/assets/kaulu_concept_logo.png";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,22 +47,27 @@ export default function Header() {
           align="center"
           justify="space-between"
           px={{ base: 4, md: 8 }}
-          h="66px"
+          maxH="66px"
+          h="100%"
           maxW="7xl"
           mx="auto"
         >
           {/* Logo */}
-          <Text
+          <Box
             as={Link}
             href="/"
-            fontSize={{ base: "xl", md: "2xl" }}
-            fontWeight="bold"
-            color="blackAlpha.900"
-            _hover={{ opacity: 0.8 }}
             transition="opacity 0.2s"
+            w={{ base: "100%", md: "max-content" }}
+            alignContent="center"
           >
-            Kaulu Concept
-          </Text>
+            <Image
+              src={kauluLogo}
+              style={{ margin: 'auto' }}
+              alt="Kaulu Concept Logo"
+              width={132}
+              height={132}
+            />
+          </Box>
 
           {/* Desktop Nav */}
           <Flex
