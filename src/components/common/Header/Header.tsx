@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Flex, Text, Button, IconButton, useDisclosure } from "@chakra-ui/react";
+import { Box, Flex, Button, IconButton, useDisclosure } from "@chakra-ui/react";
 import { useState, useEffect, useCallback } from "react";
 import { HiMenu } from "react-icons/hi";
 import Link from "next/link";
@@ -17,7 +17,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    handleScroll(); // Check initial position
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
@@ -37,7 +37,7 @@ export default function Header() {
         w="100%"
         zIndex={1000}
         backdropFilter="blur(80px)"
-        background="whiteAlpha.500"
+        bg="whiteAlpha.500"
         borderColor="gray.700"
         transform={showHeader ? "translateY(0)" : "translateY(-100%)"}
         transition="transform 0.3s ease-in-out"
