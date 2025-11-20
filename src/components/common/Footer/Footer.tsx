@@ -12,7 +12,7 @@ export default function Footer() {
       bottom={0}
       left={0}
       right={0}
-      maxH="60px"
+      maxH={{base: "80px", md: "60px"}}
       h="100%"
       alignContent="center"
       px={{ base: 4, md: 8 }}
@@ -52,6 +52,13 @@ export default function Footer() {
           textAlign={{ base: "center", md: "right" }}
         >
           © 2025 Kaulu Concept. All rights reserved.
+        </Text>
+        <Text
+          fontSize="sm"
+          color="gray.600"
+          textAlign={{ base: "center", md: "right" }}
+        >
+          Jl Bumbak, No.77, Kerobokan, Kuta Utara, Badung, Bali
         </Text>
       </Flex>
     </Box>

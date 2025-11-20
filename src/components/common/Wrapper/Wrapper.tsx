@@ -9,7 +9,7 @@ export default function Wrapper({ children }: { children: ReactNode }) {
       margin="auto"
       maxW="80vw"
       w="100%"
-      mb="80px"
+      mb={{base: "100px", md: "80px"}}
       pt="86px"
     >
       {children}

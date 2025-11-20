@@ -5,6 +5,7 @@ import WhatWeDo from "@/components/hero/WhatWeDo";
 import WhyChooseUs from "@/components/hero/WhyChooseUs";
 import Wrapper from "@/components/common/Wrapper";
 import StaticBanner from "@/components/hero/StaticBanner";
+import Maps from "@/components/common/Maps";
 
 export default function Dashboard() {
   return (
@@ -16,6 +17,7 @@ export default function Dashboard() {
         <DashboardSection />
         <WhatWeDo />
         <WhyChooseUs />
+        <Maps />
       </Wrapper>
     </>
   );
