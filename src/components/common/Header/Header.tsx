@@ -36,7 +36,7 @@ export default function Header() {
         right={0}
         w="100%"
         zIndex={1000}
-        backdropFilter="blur(80px)"
+        backdropFilter={{base:"none", md: "blur(80px)"}}
         bg="whiteAlpha.500"
         borderColor="gray.700"
         transform={showHeader ? "translateY(0)" : "translateY(-100%)"}
@@ -48,7 +48,7 @@ export default function Header() {
           align="center"
           justify="space-between"
           px={{ base: 4, md: 8 }}
-          maxH="66px"
+          maxH="86px"
           h="100%"
           maxW="7xl"
           mx="auto"
@@ -65,8 +65,8 @@ export default function Header() {
               src={kauluLogo}
               style={{ margin: 'auto' }}
               alt="Kaulu Concept Logo"
-              width={132}
-              height={132}
+              width={175}
+              height={175}
             />
           </Box>
 
