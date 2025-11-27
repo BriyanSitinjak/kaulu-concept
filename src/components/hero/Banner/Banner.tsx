@@ -21,7 +21,7 @@ export default function Banner() {
 
         const timer = window.setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % slides.length)
-        }, 7000)
+        }, 5000)
 
         return () => window.clearInterval(timer)
     }, [shouldReduceMotion, hasMultipleSlides])
