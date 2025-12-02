@@ -16,6 +16,7 @@ export const SCROLL_THRESHOLD = 50;
 
 // List of menu that exist in the header
 export const MENU_ITEMS: MenuType[] = [
+  { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'About Us', href: '/about-us' },
