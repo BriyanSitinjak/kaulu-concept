@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import Image from "next/image";
-import bannerHome from "@/assets/banner_four_kaulu_concept.jpeg";
+import bannerHome from "@/assets/portfolio_six_kaulu_concept.jpeg"
 
 export default function StaticBanner() {
   return (
