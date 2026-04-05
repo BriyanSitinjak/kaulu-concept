@@ -21,7 +21,7 @@ export default function MapsSection() {
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={POSITION} icon={CUSTOM_MARKER}>
-        <Popup>Kaulu Concept HQ Office</Popup>
+        <Popup>Kaulu Concept Office</Popup>
       </Marker>
     </MapContainer>
   );
