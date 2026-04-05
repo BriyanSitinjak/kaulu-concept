@@ -4,13 +4,16 @@ import { Box, Flex, Button, IconButton, useDisclosure } from "@chakra-ui/react";
 import { useState, useEffect, useCallback } from "react";
 import { HiMenu } from "react-icons/hi";
 import Link from "next/link";
-import { MENU_ITEMS, SCROLL_THRESHOLD } from "@/constants";
+import { MENU_ITEMS, SCROLL_THRESHOLD, KAULU_CHOCOLATE } from "@/constants";
 import Image from "next/image";
 import kauluLogo from "@/assets/kaulu_concept_logo.png";
+import { useHeaderSurfaceTheme } from "@/hooks/useHeaderSurfaceTheme";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const surfaceTheme = useHeaderSurfaceTheme();
+  const onDarkSurface = surfaceTheme === "dark";
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
@@ -25,9 +28,12 @@ export default function Header() {
   const showHeader = !isScrolled;
   const showBurgerMenu = isScrolled;
 
+  const navColor = onDarkSurface ? "white" : KAULU_CHOCOLATE;
+  const headerBg = onDarkSurface ? "rgba(0,0,0,0.42)" : "rgba(253, 245, 230, 0.88)";
+  const navHoverBg = onDarkSurface ? "rgba(255,255,255,0.12)" : "rgba(62, 39, 35, 0.08)";
+
   return (
     <>
-      {/* Header Bar */}
       <Box
         as="header"
         position="fixed"
@@ -36,11 +42,12 @@ export default function Header() {
         right={0}
         w="100%"
         zIndex={1000}
-        backdropFilter={{base:"none", md: "blur(80px)"}}
-        bg="whiteAlpha.500"
-        borderColor="gray.700"
+        backdropFilter={{ base: "none", md: "blur(16px)" }}
+        bg={headerBg}
+        borderBottomWidth="1px"
+        borderColor={onDarkSurface ? "whiteAlpha.200" : "blackAlpha.06"}
         transform={showHeader ? "translateY(0)" : "translateY(-100%)"}
-        transition="transform 0.3s ease-in-out"
+        transition="transform 0.3s ease-in-out, background-color 0.25s ease, border-color 0.25s ease"
         suppressHydrationWarning
       >
         <Flex
@@ -53,7 +60,6 @@ export default function Header() {
           maxW="7xl"
           mx="auto"
         >
-          {/* Logo */}
           <Box
             as={Link}
             href="/"
@@ -63,14 +69,17 @@ export default function Header() {
           >
             <Image
               src={kauluLogo}
-              style={{ margin: 'auto' }}
+              style={{
+                margin: "auto",
+                filter: onDarkSurface ? "brightness(0) invert(1)" : undefined,
+                transition: "filter 0.25s ease",
+              }}
               alt="Kaulu Concept Logo"
               width={175}
               height={175}
             />
           </Box>
 
-          {/* Desktop Nav */}
           <Flex
             gap={{ base: 2, md: 6 }}
             align="center"
@@ -82,9 +91,11 @@ export default function Header() {
                 as={Link}
                 href={item.href}
                 variant="ghost"
-                color="#2C3F75"
+                color={navColor}
                 fontSize="md"
-                _hover={{ bg: "rgba(255, 255, 255, 0.1)" }}
+                fontWeight="medium"
+                transition="color 0.2s ease, background 0.2s ease"
+                _hover={{ bg: navHoverBg }}
               >
                 {item.label}
               </Button>
@@ -93,7 +104,6 @@ export default function Header() {
         </Flex>
       </Box>
 
-      {/* Mobile Burger Menu Button */}
       {showBurgerMenu && (
         <IconButton
           aria-label="Open menu"
@@ -113,7 +123,6 @@ export default function Header() {
         />
       )}
 
-      {/* Sidebar Drawer Menu */}
       <Box
         position="fixed"
         top={0}
@@ -136,10 +145,10 @@ export default function Header() {
               as={Link}
               href={item.href}
               variant="ghost"
-              color="#2C3F75"
+              color={KAULU_CHOCOLATE}
               fontSize="lg"
               justifyContent="flex-start"
-              _hover={{ bg: "rgba(255, 255, 255, 0.1)" }}
+              _hover={{ bg: "rgba(62, 39, 35, 0.06)" }}
               onClick={onClose}
             >
               {item.label}
@@ -148,7 +157,6 @@ export default function Header() {
         </Flex>
       </Box>
 
-      {/* Overlay */}
       {isOpen && (
         <Box
           position="fixed"

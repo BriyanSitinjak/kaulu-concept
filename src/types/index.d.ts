@@ -57,3 +57,12 @@ export type PortfolioGridProps = {
   animationDuration?: number;
   priorityCount?: number;
 };
+
+/** Numbered highlight card under the home hero (image + title + blurb). */
+export type HomeFeatureCardType = {
+  index: number;
+  title: string;
+  description: string;
+  asset: StaticImageData;
+  imageAlt: string;
+};

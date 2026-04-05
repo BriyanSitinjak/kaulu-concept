@@ -8,8 +8,98 @@ import portfolioThree from "@/assets/portfolio_three_kaulu_concept.jpeg";
 import portfolioFour from "@/assets/portfolio_four_kaulu_concept.jpeg";
 import portfolioFive from "@/assets/portfolio_five_kaulu_concept.jpeg";
 import portfolioSix from "@/assets/portfolio_six_kaulu_concept.jpeg";
+import assetOne from "@/assets/asset_one_kaulu_concept.jpg";
+import assetTwo from "@/assets/asset_two_kaulu_concept.jpg";
+import assetThree from "@/assets/asset_three_kaulu_concept.jpg";
+import assetFour from "@/assets/asset_four_kaulu_concept.jpg";
+import assetFive from "@/assets/asset_five_kaulu_concept.jpg";
+import assetSix from "@/assets/asset_six_kaulu_concept.jpg";
+import assetSeven from "@/assets/asset_seven_kaulu_concept.jpg";
+import assetEight from "@/assets/asset_eight_kaulu_concept.jpg";
+import assetNine from "@/assets/asset_nine_kaulu_concept.jpg";
+import assetTen from "@/assets/asset_ten_kaulu_concept.jpg";
+import assetEleven from "@/assets/asset_eleven_kaulu_concept.jpg";
+import assetTwelve from "@/assets/asset_twelve_kaulu_concept.jpg";
+import assetThirteen from "@/assets/asset_thirteen_kaulu_concept.jpg";
+import assetFourteen from "@/assets/asset_fourteen_kaulu_concept.jpg";
+import homeHeroLayoutReference from "@/assets/home_hero_layout_reference.png";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { ExpertiseType, MenuType, SlidesType, SocialLinkType, TitleDescType } from "@/types";
+import {
+  ExpertiseType,
+  HomeFeatureCardType,
+  MenuType,
+  SlidesType,
+  SocialLinkType,
+  TitleDescType,
+} from "@/types";
+
+/** Page shell / hero panel (warm cream family from layout reference). */
+export const KAULU_PAGE_CREAM = "#F5F0E1";
+export const KAULU_PAGE_CREAM_SOFT = "#FDF5E6";
+/** Primary body and UI on light surfaces. */
+export const KAULU_CHOCOLATE = "#3E2723";
+export const KAULU_CHOCOLATE_DEEP = "#4B3621";
+
+/** Shared content width: hero block and card row align to the same max width. */
+export const HOME_CONTENT_MAX_W = "1320px";
+
+/**
+ * Left visual for the split home hero (reference screenshot).
+ * Swap to a photo import if you replace this asset.
+ */
+export const HOME_HERO_SPLIT_IMAGE = homeHeroLayoutReference;
+
+/** Full-viewport top hero (living room / staircase reference still). */
+export const HOME_HERO_FULLBLEED_IMAGE = assetNine;
+
+/**
+ * All fourteen numbered stills for the home experience and future sections.
+ * Reorder or reassign below when you add new bands (e.g. testimonials, process steps).
+ */
+export const KAULU_NUMBERED_ASSETS = [
+  assetOne,
+  assetTwo,
+  assetThree,
+  assetFour,
+  assetFive,
+  assetSix,
+  assetSeven,
+  assetEight,
+  assetNine,
+  assetTen,
+  assetEleven,
+  assetTwelve,
+  assetThirteen,
+  assetFourteen,
+] as const;
+
+/** Fallback interior still if the split hero image is swapped programmatically later. */
+export const HOME_HERO_ASSET = assetOne;
+
+/** Three-up feature row directly under the hero (rounded cards + gradient overlay). */
+export const HOME_FEATURE_CARDS: HomeFeatureCardType[] = [
+  {
+    index: 1,
+    title: "Decorations",
+    description: "Tailor-made pieces to fit your style.",
+    asset: assetTwo,
+    imageAlt: "Interior decorations and curated styling",
+  },
+  {
+    index: 2,
+    title: "Furniture",
+    description: "High quality furniture designed to last.",
+    asset: assetThree,
+    imageAlt: "Furniture and living space composition",
+  },
+  {
+    index: 3,
+    title: "Decorations",
+    description: "Beauty meets daily responsibility.",
+    asset: assetFour,
+    imageAlt: "Decor and material details",
+  },
+];
 
 // Treshold for scroll animation slider
 export const SCROLL_THRESHOLD = 50;

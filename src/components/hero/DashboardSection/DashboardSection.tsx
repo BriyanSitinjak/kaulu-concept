@@ -1,7 +1,12 @@
+/**
+ * DashboardSection — introductory copy and secondary CTA after the feature grid.
+ * Future: split into stats + manifesto columns, or replace with a single rich-text block from CMS.
+ */
+
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
-import { TEXT_DASHBOARD_CONTENT } from "@/constants";
+import { KAULU_CHOCOLATE, TEXT_DASHBOARD_CONTENT } from "@/constants";
 import { motion, useReducedMotion } from "framer-motion";
 import { fadeInUp } from "@/utils";
 
@@ -24,13 +29,14 @@ export default function DashboardSection() {
             textTransform="uppercase"
             letterSpacing="widest"
             fontSize="xs"
-            color="blackAlpha.600"
+            color={KAULU_CHOCOLATE}
+            opacity={0.85}
           >
             Kaulu Concept Vision
           </Text>
           <Heading
-            as="h1"
-            color="blackAlpha.900"
+            as="h2"
+            color={KAULU_CHOCOLATE}
             size="lg"
             fontWeight="semibold"
             textAlign="center"
@@ -39,18 +45,19 @@ export default function DashboardSection() {
             Crafting Exceptional Architecture & Interior Experiences
           </Heading>
           {TEXT_DASHBOARD_CONTENT.map((text, idx) => (
-            <Text key={idx} textAlign="center">
+            <Text key={idx} textAlign="center" color={KAULU_CHOCOLATE} opacity={0.88} maxW="2xl">
               {text}
             </Text>
           ))}
           <Button
             as={Link}
-            href="/services"
+            href="/services/"
             variant="outline"
-            colorScheme="blackAlpha"
-            color="blackAlpha.900"
+            borderColor={KAULU_CHOCOLATE}
+            color={KAULU_CHOCOLATE}
             rightIcon={<FaArrowRight />}
             mt={{ base: 8, md: 8 }}
+            _hover={{ bg: "rgba(62, 39, 35, 0.08)" }}
           >
             Discover Our Design Packages
           </Button>        
