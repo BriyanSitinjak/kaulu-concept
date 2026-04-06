@@ -12,7 +12,6 @@ import Wrapper from "@/components/common/Wrapper";
 import Maps from "@/components/common/Maps";
 import { Box } from "@chakra-ui/react";
 import HomeHeroFullBleed from "@/components/hero/HomeHeroFullBleed";
-import HomeHeroBanner from "@/components/hero/HomeHeroBanner";
 import HomeFeatureGrid from "@/components/hero/HomeFeatureGrid";
 import { KAULU_PAGE_CREAM } from "@/constants";
 
@@ -23,8 +22,6 @@ export default function Dashboard() {
       <HomeHeroFullBleed />
 
       <Wrapper omitHeaderOffset>
-        <HomeHeroBanner />
-
         <HomeFeatureGrid />
 
         {/* Future: <ClientLogos /> or <FeaturedProjectStrip /> */}
