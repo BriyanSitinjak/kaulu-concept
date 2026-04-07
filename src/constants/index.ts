@@ -73,6 +73,10 @@ export const KAULU_NUMBERED_ASSETS = [
   assetFourteen,
 ] as const;
 
+export const DECORATION_ITEMS = [assetFourteen, assetOne, assetSix, assetTen, assetThirteen, assetTwelve];
+
+export const FURNITURE_ITEMS = [assetTwo, assetThree, assetFour, assetFive, assetSeven, assetEight, assetNine, assetEleven];
+
 /** Fallback interior still if the split hero image is swapped programmatically later. */
 export const HOME_HERO_ASSET = assetOne;
 

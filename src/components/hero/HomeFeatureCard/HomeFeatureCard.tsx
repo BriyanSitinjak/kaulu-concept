@@ -2,11 +2,12 @@
 
 /**
  * HomeFeatureCard — image tile with bottom gradient, index badge, and left-aligned copy.
- * Future: link wrapper, hover video swap, or CMS-driven fields passed from a parent grid.
+ * Future: hover video swap, or CMS-driven fields passed from a parent grid.
  */
 
 import { Box, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import Link from "next/link";
 import type { HomeFeatureCardType } from "@/types";
 
 type Props = {
@@ -16,8 +17,14 @@ type Props = {
 
 export default function HomeFeatureCard({ item, priority = false }: Props) {
   const n = String(item.index).padStart(2, "0");
+  const href =
+    item.title.toLowerCase() === "decorations"
+      ? "/decorations"
+      : item.title.toLowerCase() === "furniture"
+      ? "/furniture"
+      : undefined;
 
-  return (
+  const content = (
     <Box
       position="relative"
       role="article"
@@ -26,6 +33,7 @@ export default function HomeFeatureCard({ item, priority = false }: Props) {
       overflow="hidden"
       minH={{ base: "280px", sm: "300px", md: "min(380px, 28vw)" }}
       w="100%"
+      cursor={href ? "pointer" : "default"}
     >
       <Image
         src={item.asset}
@@ -87,5 +95,15 @@ export default function HomeFeatureCard({ item, priority = false }: Props) {
         </Text>
       </Box>
     </Box>
+  );
+
+  if (!href) {
+    return content;
+  }
+
+  return (
+    <Link href={href} style={{ textDecoration: "none" }}>
+      {content}
+    </Link>
   );
 }
