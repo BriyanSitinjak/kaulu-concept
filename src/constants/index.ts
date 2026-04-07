@@ -82,7 +82,7 @@ export const HOME_FEATURE_CARDS: HomeFeatureCardType[] = [
     index: 1,
     title: "Decorations",
     description: "Tailor-made pieces to fit your style.",
-    asset: assetTwo,
+    asset: assetOne,
     imageAlt: "Interior decorations and curated styling",
   },
   {
@@ -91,13 +91,6 @@ export const HOME_FEATURE_CARDS: HomeFeatureCardType[] = [
     description: "High quality furniture designed to last.",
     asset: assetThree,
     imageAlt: "Furniture and living space composition",
-  },
-  {
-    index: 3,
-    title: "Decorations",
-    description: "Beauty meets daily responsibility.",
-    asset: assetFour,
-    imageAlt: "Decor and material details",
   },
 ];
 
