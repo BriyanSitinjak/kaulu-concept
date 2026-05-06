@@ -6,7 +6,7 @@ import { HiMenu } from "react-icons/hi";
 import Link from "next/link";
 import { MENU_ITEMS, SCROLL_THRESHOLD, KAULU_CHOCOLATE } from "@/constants";
 import Image from "next/image";
-import kauluLogo from "@/assets/kaulu_concept_logo.png";
+import kauluLogo from "@/asset/kaulu_concept_logo.png";
 import { useHeaderSurfaceTheme } from "@/hooks/useHeaderSurfaceTheme";
 
 export default function Header() {

@@ -68,16 +68,12 @@ export default function HomeHeroFullBleed() {
           color="white"
           fontWeight="normal"
           lineHeight={{ base: "1.2", md: "1.18" }}
-          fontSize={{ base: "1.65rem", sm: "2.1rem", md: "2.65rem", lg: "3.15rem" }}
-          maxW="22ch"
+          fontSize={{ base: "1.15rem", sm: "1.4rem", md: "1.8rem", lg: "2.1rem" }}
+          maxW={{ base: "26ch", md: "none" }}
           mb={{ base: 10, md: 12 }}
           sx={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
         >
-          Crafting Exceptional
-          <br />
-          Architecture &amp; Interior
-          <br />
-          Experiences
+          Design Interior · Architecture · Building · Experiences
         </Heading>
 
         <Button
